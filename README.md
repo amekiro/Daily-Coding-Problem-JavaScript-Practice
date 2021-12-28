@@ -21,3 +21,15 @@ If only one input tree has a node in a given position, the corresponding node in
 - Is the structure between the two trees equivalent with different values? I will assume they are **not** equivalent.
 - If one tree has 2 branches while another tree has 1 branch, does the 1 only correspond to the first branch? I will assume branches correspond to the branch in the same relation from the left (branch A has nodes 1 and 2 while branch B only has node 2. Branch A node 1 will not be combined with any other nodes, while branch As and Bs node 2 will be combined for the final tree)
 - Are the values for the tree nodes only numbers? I will assume nodes only contain numbers.
+
+### #825 (Easy)
+**Prompt:** Given a sorted list of integers, square the elements and give the output in sorted order.
+
+For example, given [-9, -2, 0, 2, 3], return [0, 4, 4, 9, 81].
+
+**Strategy:**
+1. Map array to new array with i being i * i
+2. Sort list
+
+**Questions** for prompt:
+- This appears to be a very straightforward prompt. There are no questions at this time.
