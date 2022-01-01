@@ -114,3 +114,32 @@ Tower C (15):
     - No tower after C: Distance from last listener (20) = **5**
 
 After calculating all towers, the minimum distance for each tower are [3, 1, 3, 5] with 5 as the greatest value.
+
+***
+
+## #829 (Hard)
+
+**Prompt:** Create a data structure that performs all the following operations in O(1) time:
+
+- plus: Add a key with value 1. If the key already exists, increment its value by one.
+- minus: Decrement the value of a key. If the key's value is currently 1, remove it.
+- get_max: Return a key with the highest value.
+- get_min: Return a key with the lowest value.
+
+**Strategy:**
+- In order to remove the need to repeatedly write an object, I'll use a factory function to create each test case along with the plus, minus, get_max and get_min methods
+- Create a function to run through all methods in order to reduce repetition for testing. There will also need a timer to see how long the process takes to check timing.
+    - plus: method with 1 parameter (key)
+        1. Check if key already exists
+            - If key exists, increment value by one
+            - If key doesn't exist, add key with value of 1
+    - minus: method with 1 parameter (key)
+        1. Check if the key exists
+            - If key does not exist, do nothing
+            - If key exists
+                - If value is 1, then remove the option
+                - If the value is not 1, decrement it by one
+    - get_max: method with 0 parameters
+        1. Compile all keys as an array of keys and values and get the maximum value
+    - get_min: method with 0 parameters
+        1. Compile all keys as an array of keys and values and get the minimum value
