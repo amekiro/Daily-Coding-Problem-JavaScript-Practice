@@ -143,3 +143,32 @@ After calculating all towers, the minimum distance for each tower are [3, 1, 3, 
         1. Compile all keys as an array of keys and values and get the maximum value
     - get_min: method with 0 parameters
         1. Compile all keys as an array of keys and values and get the minimum value
+
+***
+
+## #832 (Easy)
+
+**Prompt:** Given an array of elements, return the length of the longest subarray where all its elements are distinct.
+
+For example, given the array [5, 1, 3, 5, 2, 3, 4, 1], return 5 as the longest subarray of distinct elements is [5, 2, 3, 4, 1].
+
+**Questions:**
+- If a numbers are entered into the array, is the string version and number version considered distinct? Since the prompt states elements instead of numbers, I will assume they are distinct.
+
+**Strategy:**
+1. Iterate through each index in the array and use a holder array to identify which elements are being counted.
+2. If any duplicates are found, prior elements up to the prior duplicate are removed.
+3. Check between a stored length value with the actual length of the holder array and keep the larger number.
+
+Using [5, 1, 3, 5, 2, 3, 4, 1] as the sample, the iterations for the holder array will run as:
+
+| Iteration | Array # | Holder Array  | Max Length |
+|:---------:|:-------:|:-------------:|:----------:|
+|     0     |    5    |        5      |     1      |
+|     1     |    1    |      5, 1     |     2      |
+|     2     |    3    |    5, 1, 3    |     3      |
+|     3     |    5    |    1, 3, 5    |     3      |
+|     4     |    2    |   1, 3, 5, 2  |     4      |
+|     5     |    3    |    5, 2, 3    |     4      |
+|     6     |    4    |   5, 2, 3, 4  |     4      |
+|     7     |    1    | 5, 2, 3, 4, 1 |     5      |
